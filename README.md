@@ -10,7 +10,7 @@ Scopes in the app include
 
 > Application -> Activity -> Controller
 
-<img src=".art/dagger_scope.png" width=300></img>
+<img src=".art/dagger_scope.png" width=600></img>
 
 And the related dependencies:  
 > ApplicationDep, ActivityDep and ControllerDep
