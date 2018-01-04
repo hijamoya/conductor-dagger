@@ -12,8 +12,10 @@ import dagger.multibindings.IntoMap;
 
 @Module(subcomponents = {ControllerComponent.class})
 public abstract class ControllerBindingModule {
+
     @Binds
     @IntoMap
     @ControllerKey(MyController.class)
     abstract AndroidInjector.Factory<? extends Controller> bindHomeControllerInjectorFactory(ControllerComponent.Builder builder);
+
 }
