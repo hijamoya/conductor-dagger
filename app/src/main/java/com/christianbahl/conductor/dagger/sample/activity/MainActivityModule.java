@@ -7,7 +7,7 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public abstract class MainActivityModule {
+public class MainActivityModule {
     @Provides
     @ActivityScope
     static ActivityDependency activityDependency(MainActivity activity) {
