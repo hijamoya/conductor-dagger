@@ -8,7 +8,9 @@ I wanted to experimented with it some more.
 I added a fake dependency on each level of the app.  
 Scopes in the app include
 
-> Application -> Activity -> Controller  
+> Application -> Activity -> Controller
+
+<img src=".art/dagger_scope" width=300></img>
 
 And the related dependencies:  
 > ApplicationDep, ActivityDep and ControllerDep
