@@ -7,7 +7,7 @@ I wanted to experimented with it some more.
 ## Goal
 I added a fake dependency on each level of the app.
 
-> Application -> Activity -> Controller
+> Application -> Activity -> Controller  
 > ApplicationDep, ActivityDep and ControllerDep
 
 * The controller should have access to all of them
