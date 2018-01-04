@@ -1,4 +1,4 @@
-package com.christianbahl.conductor.dagger.sample.di;
+package com.christianbahl.conductor.dagger.sample.di.scope;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
