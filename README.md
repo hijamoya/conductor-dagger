@@ -11,7 +11,6 @@ Scopes in the app include
 > Application -> Activity -> Controller
 
 <img src=".art/dagger_scope.png" width=300></img>
-![dagger scopes](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 And the related dependencies:  
 > ApplicationDep, ActivityDep and ControllerDep
