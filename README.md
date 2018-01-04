@@ -1,5 +1,5 @@
 # Conductor Dagger
-Some helper classes that will allow you to inject your Conductor Controllers with Dagger.
+Some helper classes that will allow you to inject your Conductor Controllers with Dagger.  
 This is a fork of https://github.com/Bodo1981/conductor-dagger.
 
 I wanted to experimented with it some more.
