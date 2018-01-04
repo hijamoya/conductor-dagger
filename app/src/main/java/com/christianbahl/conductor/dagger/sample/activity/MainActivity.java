@@ -21,10 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
   private Router router;
 
-  @Inject
-  ApplicationDependency applicationDependency;
-  @Inject
-  ActivityDependency activityDependency;
+  @Inject ApplicationDependency applicationDependency;
+  @Inject ActivityDependency activityDependency;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     AndroidInjection.inject(this);

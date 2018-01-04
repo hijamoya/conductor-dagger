@@ -8,7 +8,7 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-abstract class ApplicationModule {
+abstract class AppModule {
 
     @Provides
     @Singleton

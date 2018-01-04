@@ -5,12 +5,13 @@ import com.christianbahl.conductor.dagger.sample.activity.MainActivityModule;
 import com.christianbahl.conductor.dagger.sample.di.scope.ActivityScope;
 
 import dagger.Module;
+import dagger.android.AndroidInjectionModule;
 import dagger.android.ContributesAndroidInjector;
 
-@Module
+@Module(includes = AndroidInjectionModule.class)
 public abstract class ActivityBindingModule {
 
-    @ContributesAndroidInjector(modules = {MainActivityModule.class})
     @ActivityScope
+    @ContributesAndroidInjector(modules = {MainActivityModule.class, ControllerBindingModule.class})
     abstract MainActivity mainActivity();
 }
