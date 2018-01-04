@@ -7,7 +7,7 @@ import com.christianbahl.conductor.dagger.sample.di.scope.ActivityScope;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
-@Module //(subcomponents = {ControllerComponent.class})
+@Module
 public abstract class ActivityBindingModule {
 
     @ContributesAndroidInjector(modules = {MainActivityModule.class})
