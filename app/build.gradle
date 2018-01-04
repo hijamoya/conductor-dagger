@@ -4,7 +4,6 @@ def globalConf = rootProject.ext
 
 android {
   compileSdkVersion globalConf.compileSdkVersion
-  buildToolsVersion globalConf.buildToolsVersion
 
   defaultConfig {
     minSdkVersion globalConf.minSdkVersion
