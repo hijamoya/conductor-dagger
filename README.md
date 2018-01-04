@@ -16,6 +16,6 @@ And the related dependencies:
 > ApplicationDep, ActivityDep and ControllerDep
 
 In this sample I want to showcase these possibilities:
-* The Controller should have access to all of them
-* The Activity to the ActivityDep and ApplicationDep
-* And the Application solely to the ApplicationDep
+* The `Controller` should have access to the `ApplicationDep`, `ActivityDep` and the `ControllerDep`
+* The `Activity` should be able to inject the `ApplicationDep` and the `ActivityDep`
+* The `Application` should solely be able to inject the `ApplicationDep`
