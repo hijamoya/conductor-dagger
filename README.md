@@ -5,11 +5,15 @@ This is a fork of https://github.com/Bodo1981/conductor-dagger.
 I wanted to experimented with it some more.
 
 ## Goal
-I added a fake dependency on each level of the app.
+I added a fake dependency on each level of the app.  
+Scopes in the app include
 
 > Application -> Activity -> Controller  
+
+And the related dependencies:  
 > ApplicationDep, ActivityDep and ControllerDep
 
-* The controller should have access to all of them
+In this sample I want to showcase these possibilities:
+* The Controller should have access to all of them
 * The Activity to the ActivityDep and ApplicationDep
 * And the Application solely to the ApplicationDep
