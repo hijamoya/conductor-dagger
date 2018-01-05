@@ -1,16 +1,22 @@
 package com.christianbahl.conductor.dagger.sample.di.binder;
 
+import android.app.Activity;
+
 import com.christianbahl.conductor.dagger.sample.activity.MainActivity;
-import com.christianbahl.conductor.dagger.sample.activity.MainActivityModule;
-import com.christianbahl.conductor.dagger.sample.di.scope.ActivityScope;
+import com.christianbahl.conductor.dagger.sample.activity.MainActivityComponent;
 
+import dagger.Binds;
 import dagger.Module;
-import dagger.android.ContributesAndroidInjector;
+import dagger.android.ActivityKey;
+import dagger.android.AndroidInjector;
+import dagger.multibindings.IntoMap;
 
-@Module
+@Module(subcomponents = {MainActivityComponent.class})
 public abstract class ActivityBindingModule {
 
-    @ActivityScope
-    @ContributesAndroidInjector(modules = {MainActivityModule.class, ControllerBindingModule.class})
-    abstract MainActivity mainActivity();
+    @Binds
+    @IntoMap
+    @ActivityKey(MainActivity.class)
+    abstract AndroidInjector.Factory<? extends Activity>
+    bindYourActivityInjectorFactory(MainActivityComponent.Builder builder);
 }

@@ -1,10 +1,10 @@
 package com.christianbahl.conductor.dagger.sample;
 
-import com.christianbahl.conductor.ConductorInjectionModule;
 import com.christianbahl.conductor.dagger.sample.di.binder.ActivityBindingModule;
 
 import javax.inject.Singleton;
 
+import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
@@ -13,11 +13,14 @@ import dagger.android.support.AndroidSupportInjectionModule;
 @Component(modules = {
         AppModule.class,
         ActivityBindingModule.class,
-
-        AndroidSupportInjectionModule.class,
-        ConductorInjectionModule.class
+        AndroidSupportInjectionModule.class
 })
 interface AppComponent extends AndroidInjector<App> {
     @Component.Builder
-    abstract class Builder extends AndroidInjector.Builder<App> {}
+    interface Builder {
+        @BindsInstance
+        Builder app(App app);
+        AppComponent build();
+    }
+    void inject(App app);
 }
