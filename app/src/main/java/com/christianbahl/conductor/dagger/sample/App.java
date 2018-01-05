@@ -21,8 +21,7 @@ public class App extends android.app.Application implements HasActivityInjector 
         super.onCreate();
         DaggerAppComponent
                 .builder()
-                .app(this)
-                .build()
+                .create(this)
                 .inject(this);
     }
 }
