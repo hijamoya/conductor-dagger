@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity implements HasControllerInje
 
     setContentView(R.layout.activity_main);
 
-    ViewGroup container = (ViewGroup) findViewById(R.id.controller_container);
-    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    ViewGroup container = findViewById(R.id.controller_container);
+    Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    getSupportActionBar().setTitle("Conductor-Dagger Sample");
+    getSupportActionBar().setTitle("Conductor Dagger");
 
     router = Conductor.attachRouter(this, container, savedInstanceState);
     if (!router.hasRootController()) {
