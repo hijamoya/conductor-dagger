@@ -9,7 +9,7 @@ import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 
 public class App extends android.app.Application implements HasActivityInjector {
-    @Inject protected DispatchingAndroidInjector<Activity> dispatchingActivityInjector;
+    @Inject public DispatchingAndroidInjector<Activity> dispatchingActivityInjector;
 
     @Override
     public AndroidInjector<Activity> activityInjector() {

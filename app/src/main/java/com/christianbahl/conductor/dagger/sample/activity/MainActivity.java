@@ -14,6 +14,7 @@ import com.christianbahl.conductor.dagger.sample.R;
 import com.christianbahl.conductor.dagger.sample.controller.MyController;
 import com.christianbahl.conductor.dagger.sample.dependencies.ActivityDependency;
 import com.christianbahl.conductor.dagger.sample.dependencies.ApplicationDependency;
+import com.christianbahl.conductor.dagger.sample.dependencies.DependencyThatCanBeReplacedUnderTest;
 
 import javax.inject.Inject;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements HasControllerInje
   @Inject ApplicationDependency applicationDependency;
   @Inject ActivityDependency activityDependency;
   @Inject DispatchingAndroidInjector<Controller> dispatchingControllerInjector;
+  @Inject DependencyThatCanBeReplacedUnderTest dependencyThatCanBeReplacedUnderTest;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     AndroidInjection.inject(this);
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements HasControllerInje
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    getSupportActionBar().setTitle("Conductor Dagger");
+    getSupportActionBar().setTitle(dependencyThatCanBeReplacedUnderTest.getAppTitle());
 
     router = Conductor.attachRouter(this, container, savedInstanceState);
     if (!router.hasRootController()) {

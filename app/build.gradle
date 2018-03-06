@@ -1,31 +1,42 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 def globalConf = rootProject.ext
 
 android {
-  compileSdkVersion globalConf.compileSdkVersion
-
-  defaultConfig {
-    minSdkVersion globalConf.minSdkVersion
-    targetSdkVersion globalConf.targetSdkVersion
-    versionCode globalConf.versionCode
-    versionName globalConf.versionName
+    compileSdkVersion globalConf.compileSdkVersion
 
     defaultConfig {
-      applicationId "com.christianbahl.conductor.dagger.sample"
-      minSdkVersion globalConf.minSdkVersion
-      targetSdkVersion globalConf.targetSdkVersion
-      versionCode globalConf.versionCode
-      versionName globalConf.versionName
+        minSdkVersion globalConf.minSdkVersion
+        targetSdkVersion globalConf.targetSdkVersion
+        versionCode globalConf.versionCode
+        versionName globalConf.versionName
+
+        defaultConfig {
+            testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+            applicationId "com.christianbahl.conductor.dagger.sample"
+            minSdkVersion globalConf.minSdkVersion
+            targetSdkVersion globalConf.targetSdkVersion
+            versionCode globalConf.versionCode
+            versionName globalConf.versionName
+        }
     }
-  }
 }
 
 dependencies {
-  Map<String, String> dependencies = globalConf.dependencies
+    Map<String, String> dependencies = globalConf.dependencies
 
-  compile project(":library")
-  compile dependencies.design
-  annotationProcessor dependencies.daggerCompiler
-  annotationProcessor dependencies.daggerAndroidProcessor
+    compile project(":library")
+    compile dependencies.design
+    annotationProcessor dependencies.daggerCompiler
+    annotationProcessor dependencies.daggerAndroidProcessor
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    androidTestImplementation 'junit:junit:4.12'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestCompile 'com.android.support.test:runner:1.0.1'
+}
+repositories {
+    mavenCentral()
 }
