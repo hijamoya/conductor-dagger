@@ -11,7 +11,7 @@ import com.bluelinelabs.conductor.Router;
 import com.bluelinelabs.conductor.RouterTransaction;
 import com.christianbahl.conductor.HasControllerInjector;
 import com.christianbahl.conductor.dagger.sample.R;
-import com.christianbahl.conductor.dagger.sample.controller.MyController;
+import com.christianbahl.conductor.dagger.sample.controller.viewpager.ViewPagerController;
 import com.christianbahl.conductor.dagger.sample.dependencies.ActivityDependency;
 import com.christianbahl.conductor.dagger.sample.dependencies.ApplicationDependency;
 import com.christianbahl.conductor.dagger.sample.dependencies.DependencyThatCanBeReplacedUnderTest;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements HasControllerInje
 
     router = Conductor.attachRouter(this, container, savedInstanceState);
     if (!router.hasRootController()) {
-      router.setRoot(RouterTransaction.with(new MyController()));
+      router.setRoot(RouterTransaction.with(new ViewPagerController()));
     }
   }
 

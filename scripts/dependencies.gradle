@@ -9,9 +9,14 @@ ext {
     daggerVersion = "2.14.1"
     conductorVersion = "2.1.4"
 
-    dependencies = [design                : "com.android.support:design:$supportVersion",
-                    daggerCompiler        : "com.google.dagger:dagger-compiler:$daggerVersion",
-                    daggerAndroid         : "com.google.dagger:dagger-android-support:$daggerVersion",
-                    daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$daggerVersion",
-                    conductor             : "com.bluelinelabs:conductor:$conductorVersion"]
+    dependencies = [
+            design                : "com.android.support:design:$supportVersion",
+            daggerCompiler        : "com.google.dagger:dagger-compiler:$daggerVersion",
+            daggerAndroid         : "com.google.dagger:dagger-android-support:$daggerVersion",
+            daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$daggerVersion",
+            conductor             : [
+                    "com.bluelinelabs:conductor:$conductorVersion",
+                    "com.bluelinelabs:conductor-support:$conductorVersion"
+            ]
+    ]
 }
