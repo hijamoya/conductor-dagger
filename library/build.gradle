@@ -29,6 +29,8 @@ dependencies {
 
   compile dependencies.conductor
   compile dependencies.daggerAndroid
+  compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
 }
 
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'

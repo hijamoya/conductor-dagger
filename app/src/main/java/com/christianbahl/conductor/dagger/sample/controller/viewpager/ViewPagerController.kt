@@ -9,17 +9,33 @@ import com.bluelinelabs.conductor.Controller
 import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.support.RouterPagerAdapter
+import com.christianbahl.conductor.HasControllerInjector
 import com.christianbahl.conductor.dagger.sample.R
 import com.christianbahl.conductor.dagger.sample.controller.MyController
+import com.christianbahl.conductor.dagger.sample.dependencies.ActivityDependency
+import com.christianbahl.conductor.dagger.sample.dependencies.ApplicationDependency
+import com.christianbahl.conductor.dagger.sample.dependencies.ViewPagerDependency
+import com.christianbahl.viewpager.PagerController
+import com.christianbahl.viewpager.PagerControllerInjection
+import dagger.android.DispatchingAndroidInjector
+import javax.inject.Inject
 
-class ViewPagerController : Controller() {
+class ViewPagerController : PagerController(), HasControllerInjector {
+
+    private lateinit var viewPager: ViewPager
+    override fun viewPager(): ViewPager = viewPager
+
+    @Inject lateinit var activityDependency: ActivityDependency
+    @Inject lateinit var viewPagerDependency: ViewPagerDependency
+    @Inject lateinit var applicationDependency: ApplicationDependency
+    @Inject lateinit var dispatchingControllerInjector: DispatchingAndroidInjector<Controller>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
-        //ConductorInjection.inject(this)
+        PagerControllerInjection.inject(this)
         val view =  inflater.inflate(R.layout.pager_w_tabs, container, false)
 
         val tabs = view.findViewById<TabLayout>(R.id.tab_layout)
-        val viewPager = view.findViewById<ViewPager>(R.id.view_pager)
+        viewPager = view.findViewById(R.id.view_pager)
 
         viewPager.adapter = object: RouterPagerAdapter(this) {
             override fun configureRouter(router: Router, position: Int) {
@@ -33,5 +49,9 @@ class ViewPagerController : Controller() {
         tabs.setupWithViewPager(viewPager)
 
         return view
+    }
+
+    override fun controllerInjector(): DispatchingAndroidInjector<Controller> {
+        return dispatchingControllerInjector
     }
 }
