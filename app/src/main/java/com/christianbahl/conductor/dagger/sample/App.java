@@ -2,6 +2,8 @@ package com.christianbahl.conductor.dagger.sample;
 
 import android.app.Activity;
 
+import com.christianbahl.conductor.dagger.sample.di.component.DaggerAppComponent;
+
 import javax.inject.Inject;
 
 import dagger.android.AndroidInjector;

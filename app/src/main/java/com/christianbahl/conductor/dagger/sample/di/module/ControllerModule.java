@@ -1,5 +1,6 @@
-package com.christianbahl.conductor.dagger.sample.controller;
+package com.christianbahl.conductor.dagger.sample.di.module;
 
+import com.christianbahl.conductor.dagger.sample.controller.MyController;
 import com.christianbahl.conductor.dagger.sample.dependencies.ControllerDependency;
 import com.christianbahl.conductor.dagger.sample.di.scope.ControllerScope;
 

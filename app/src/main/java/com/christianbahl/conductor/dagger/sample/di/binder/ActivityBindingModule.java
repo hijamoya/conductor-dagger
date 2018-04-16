@@ -3,7 +3,7 @@ package com.christianbahl.conductor.dagger.sample.di.binder;
 import android.app.Activity;
 
 import com.christianbahl.conductor.dagger.sample.activity.MainActivity;
-import com.christianbahl.conductor.dagger.sample.activity.MainActivityComponent;
+import com.christianbahl.conductor.dagger.sample.di.component.MainActivityComponent;
 
 import dagger.Binds;
 import dagger.Module;

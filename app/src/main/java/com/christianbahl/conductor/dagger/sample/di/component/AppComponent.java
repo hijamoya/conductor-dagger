@@ -1,6 +1,8 @@
-package com.christianbahl.conductor.dagger.sample;
+package com.christianbahl.conductor.dagger.sample.di.component;
 
+import com.christianbahl.conductor.dagger.sample.App;
 import com.christianbahl.conductor.dagger.sample.di.binder.ActivityBindingModule;
+import com.christianbahl.conductor.dagger.sample.di.module.AppModule;
 
 import javax.inject.Singleton;
 

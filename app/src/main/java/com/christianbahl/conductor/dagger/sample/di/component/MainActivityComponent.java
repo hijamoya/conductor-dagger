@@ -1,7 +1,9 @@
-package com.christianbahl.conductor.dagger.sample.activity;
+package com.christianbahl.conductor.dagger.sample.di.component;
 
 import com.christianbahl.conductor.ConductorInjectionModule;
+import com.christianbahl.conductor.dagger.sample.activity.MainActivity;
 import com.christianbahl.conductor.dagger.sample.di.binder.ControllerBindingModule;
+import com.christianbahl.conductor.dagger.sample.di.module.MainActivityModule;
 import com.christianbahl.conductor.dagger.sample.di.scope.ActivityScope;
 
 import dagger.Subcomponent;

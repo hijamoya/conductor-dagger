@@ -1,5 +1,6 @@
-package com.christianbahl.conductor.dagger.sample;
+package com.christianbahl.conductor.dagger.sample.di.module;
 
+import com.christianbahl.conductor.dagger.sample.App;
 import com.christianbahl.conductor.dagger.sample.dependencies.ApplicationDependency;
 import com.christianbahl.conductor.dagger.sample.dependencies.DependencyThatCanBeReplacedUnderTest;
 
@@ -9,7 +10,7 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-abstract class AppModule {
+public abstract class AppModule {
 
     @Provides
     @Singleton

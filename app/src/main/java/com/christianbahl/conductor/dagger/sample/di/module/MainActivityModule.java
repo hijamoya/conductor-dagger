@@ -1,5 +1,6 @@
-package com.christianbahl.conductor.dagger.sample.activity;
+package com.christianbahl.conductor.dagger.sample.di.module;
 
+import com.christianbahl.conductor.dagger.sample.activity.MainActivity;
 import com.christianbahl.conductor.dagger.sample.dependencies.ActivityDependency;
 import com.christianbahl.conductor.dagger.sample.di.scope.ActivityScope;
 
