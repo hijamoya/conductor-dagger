@@ -2,7 +2,7 @@ package com.christianbahl.conductor.dagger.sample.di.binder;
 
 import com.bluelinelabs.conductor.Controller;
 import com.christianbahl.conductor.ControllerKey;
-import com.christianbahl.conductor.dagger.sample.controller.MyController;
+import com.christianbahl.conductor.dagger.sample.controller.viewpager.MyController;
 import com.christianbahl.conductor.dagger.sample.di.component.MyControllerComponent;
 
 import dagger.Binds;

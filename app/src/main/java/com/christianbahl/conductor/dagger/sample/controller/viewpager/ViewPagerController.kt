@@ -11,7 +11,6 @@ import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.support.RouterPagerAdapter
 import com.christianbahl.conductor.HasControllerInjector
 import com.christianbahl.conductor.dagger.sample.R
-import com.christianbahl.conductor.dagger.sample.controller.MyController
 import com.christianbahl.conductor.dagger.sample.dependencies.ActivityDependency
 import com.christianbahl.conductor.dagger.sample.dependencies.ApplicationDependency
 import com.christianbahl.conductor.dagger.sample.dependencies.ViewPagerDependency

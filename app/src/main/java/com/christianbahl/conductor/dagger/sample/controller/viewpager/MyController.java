@@ -1,4 +1,4 @@
-package com.christianbahl.conductor.dagger.sample.controller;
+package com.christianbahl.conductor.dagger.sample.controller.viewpager;
 
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;

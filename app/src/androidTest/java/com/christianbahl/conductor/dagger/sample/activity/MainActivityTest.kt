@@ -8,7 +8,6 @@ import android.support.test.runner.AndroidJUnit4
 import android.support.v7.widget.Toolbar
 import com.christianbahl.conductor.dagger.sample.App
 import com.christianbahl.conductor.dagger.sample.R
-import com.christianbahl.conductor.dagger.sample.controller.MyController
 import com.christianbahl.conductor.dagger.sample.dependencies.DependencyThatCanBeReplacedUnderTest
 import org.junit.Rule
 import org.junit.Test
@@ -24,7 +23,7 @@ class MainActivityTest {
             val myApp = InstrumentationRegistry.getTargetContext().applicationContext as App
             myApp.dispatchingActivityInjector = createFakeActivityInjector<MainActivity> {
                 dependencyThatCanBeReplacedUnderTest = DependencyThatCanBeReplacedUnderTest { "Mock" }
-                dispatchingControllerInjector = createControllerInjector<MyController> {}
+
             }
         }
     }
