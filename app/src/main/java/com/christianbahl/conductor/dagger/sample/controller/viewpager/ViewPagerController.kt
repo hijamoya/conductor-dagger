@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bluelinelabs.conductor.Controller
-import com.bluelinelabs.conductor.Router
-import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.support.RouterPagerAdapter
 import com.christianbahl.conductor.HasControllerInjector
 import com.christianbahl.conductor.dagger.sample.R
@@ -28,6 +26,7 @@ class ViewPagerController : PagerController(), HasControllerInjector {
     @Inject lateinit var viewPagerDependency: ViewPagerDependency
     @Inject lateinit var applicationDependency: ApplicationDependency
     @Inject lateinit var dispatchingControllerInjector: DispatchingAndroidInjector<Controller>
+    @Inject lateinit var routerPagerAdapter: RouterPagerAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         PagerControllerInjection.inject(this)
@@ -36,21 +35,11 @@ class ViewPagerController : PagerController(), HasControllerInjector {
         val tabs = view.findViewById<TabLayout>(R.id.tab_layout)
         viewPager = view.findViewById(R.id.view_pager)
 
-        viewPager.adapter = object: RouterPagerAdapter(this) {
-            override fun configureRouter(router: Router, position: Int) {
-                if (!router.hasRootController()) {
-                    router.setRoot(RouterTransaction.with(MyController()))
-                }
-            }
-
-            override fun getCount(): Int = 4
-        }
+        viewPager.adapter = routerPagerAdapter
         tabs.setupWithViewPager(viewPager)
 
         return view
     }
 
-    override fun controllerInjector(): DispatchingAndroidInjector<Controller> {
-        return dispatchingControllerInjector
-    }
+    override fun controllerInjector(): DispatchingAndroidInjector<Controller> = dispatchingControllerInjector
 }
