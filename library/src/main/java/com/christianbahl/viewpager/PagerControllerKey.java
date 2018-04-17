@@ -7,6 +7,6 @@ import dagger.MapKey;
 
 @MapKey
 @Target({ ElementType.METHOD })
-public @interface ViewControllerKey {
+public @interface PagerControllerKey {
     Class<? extends PagerController> value();
 }

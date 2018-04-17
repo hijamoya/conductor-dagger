@@ -8,7 +8,7 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class ControllerModule {
+public class MyControllerModule {
     @Provides
     @ControllerScope
     ControllerDependency controllerDependency(MyController myController) {
