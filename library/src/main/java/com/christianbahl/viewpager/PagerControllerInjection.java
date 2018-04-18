@@ -17,10 +17,10 @@ public class PagerControllerInjection {
     }
 
     private static HasPagerControllerInjector findHasPagerControllerInjector(final PagerController controller) {
-        Controller parentController = controller;
+        Controller parentController = controller.controller();
         do {
             if ((parentController = parentController.getParentController()) == null) {
-                final Activity activity = controller.getActivity();
+                final Activity activity = controller.controller().getActivity();
 
                 if (activity instanceof HasPagerControllerInjector) {
                     return (HasPagerControllerInjector) activity;

@@ -17,10 +17,14 @@ import com.christianbahl.viewpager.PagerControllerInjection
 import dagger.android.DispatchingAndroidInjector
 import javax.inject.Inject
 
-class ViewPagerController : PagerController(), HasControllerInjector {
+class ViewPagerController : Controller(),
+        PagerController<ViewPagerController>,
+        HasControllerInjector {
 
     private lateinit var viewPager: ViewPager
+
     override fun viewPager(): ViewPager = viewPager
+    override fun controller(): ViewPagerController = this
 
     @Inject lateinit var activityDependency: ActivityDependency
     @Inject lateinit var viewPagerDependency: ViewPagerDependency

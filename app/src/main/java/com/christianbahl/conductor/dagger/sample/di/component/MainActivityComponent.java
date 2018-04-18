@@ -13,8 +13,10 @@ import dagger.android.AndroidInjector;
 @ActivityScope
 @Subcomponent(modules = {
         MainActivityModule.class,
+
         PagerControllerBindingModule.class,
         RootControllerBindingModule.class,
+
         ConductorInjectionModule.class
 })
 public interface MainActivityComponent extends AndroidInjector<MainActivity> {

@@ -12,7 +12,9 @@ import dagger.android.AndroidInjector;
 @ViewPagerScope
 @Subcomponent(modules = {
         ViewPagerModule.class,
+
         ControllersUnderPagerBindingModule.class,
+
         ViewPagerControllerInjectionModule.class
 })
 public interface ViewPagerControllerComponent extends AndroidInjector<ViewPagerController> {
